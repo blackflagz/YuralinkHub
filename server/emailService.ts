@@ -25,7 +25,7 @@ export async function sendInfluencerFormEmail(influencer: Influencer) {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'mister.ryo@gmail.com',
+    to: 'blackstorm930@gmail.com',
     subject: `YURALINK - New Influencer Application: ${influencer.fullName}`,
     html: emailContent,
   };
@@ -55,7 +55,7 @@ export async function sendCompanyFormEmail(company: Company) {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'mister.ryo@gmail.com',
+    to: 'blackstorm930@gmail.com',
     subject: `YURALINK - New Campaign Inquiry: ${company.companyName}`,
     html: emailContent,
   };

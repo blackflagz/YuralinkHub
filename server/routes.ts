@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertInfluencerSchema, insertCompanySchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { sendInfluencerFormEmail, sendCompanyFormEmail } from "./emailService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Route for handling influencer applications
@@ -18,6 +19,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Store the influencer data
       const influencer = await storage.createInfluencer(parsedData.data);
+      
+      // Send email notification
+      await sendInfluencerFormEmail(influencer).catch(err => {
+        console.error("Failed to send influencer email notification:", err);
+      });
       
       // Return success response
       return res.status(201).json({ 
@@ -45,6 +51,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Store the company data
       const company = await storage.createCompany(parsedData.data);
+      
+      // Send email notification
+      await sendCompanyFormEmail(company).catch(err => {
+        console.error("Failed to send company email notification:", err);
+      });
       
       // Return success response
       return res.status(201).json({ 
