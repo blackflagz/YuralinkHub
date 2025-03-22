@@ -28,7 +28,7 @@ const OptionCard = ({
       </p>
       <Link 
         href={buttonLink}
-        className="btn-hover-effect bg-gradient-to-r from-[#4f46e5] to-[#6366f1] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
+        className="btn-hover-effect bg-gradient-to-r from-[#10b981] to-[#1db954] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
         {buttonText}
       </Link>
     </GlassCard>

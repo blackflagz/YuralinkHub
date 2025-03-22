@@ -8,7 +8,7 @@ const Home = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            Connect <span className="text-primary">Influencers</span> with <span className="text-primary">Companies</span>
+            Connect <span className="text-[#1db954]">Influencers</span> with <span className="text-[#1db954]">Companies</span>
           </h1>
           <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
             YURALINK bridges the gap between brands and content creators,
@@ -23,7 +23,7 @@ const Home = () => {
             description="Find the perfect influencers to promote your brand and products to reach your target audience effectively."
             buttonText="Start a Campaign"
             buttonLink="/company-form"
-            icon={<Building2 className="h-10 w-10 text-primary" />}
+            icon={<Building2 className="h-10 w-10 text-[#1db954]" />}
           />
           
           {/* Influencer Card */}
@@ -32,7 +32,7 @@ const Home = () => {
             description="Connect with brands that align with your content and audience, and turn your influence into profitable partnerships."
             buttonText="Join Our Network"
             buttonLink="/influencer-form"
-            icon={<User className="h-10 w-10 text-primary" />}
+            icon={<User className="h-10 w-10 text-[#1db954]" />}
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h4 className="text-xl font-bold text-white mb-4">YURALINK</h4>
+            <h4 className="text-xl font-bold text-white mb-4"><span className="text-[#1db954]">YURA</span>LINK</h4>
             <p className="text-zinc-400">
               Connecting influencers and brands for authentic,
               impactful collaborations in the digital landscape.
