@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section className="page-transition min-h-screen flex items-center justify-center py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             Connect <span className="text-[#1db954]">Influencers</span> with <span className="text-[#1db954]">Companies</span>
           </h1>
@@ -16,7 +16,16 @@ const Home = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        {/* Connection Illustration */}
+        <div className="mb-16 w-full flex justify-center overflow-hidden">
+          <img 
+            src="/connection.svg" 
+            alt="YURALINK connects influencers with companies" 
+            className="w-full max-w-4xl object-contain transform hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Card */}
           <OptionCard 
             title="I'm a Company"
