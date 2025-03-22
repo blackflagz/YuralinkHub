@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <header className="w-full py-4 px-4 md:px-8 glass z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-white flex items-center">
-          <span className="text-primary">YURA</span>LINK
+        <Link href="/" className="flex items-center">
+          <img src="/images/logo.png" alt="YURALINK Logo" className="h-10" />
         </Link>
         <nav>
           <ul className="flex space-x-6">

@@ -27,8 +27,6 @@ const Footer = () => {
             <h4 className="text-xl font-bold text-white mb-4">Contact Us</h4>
             <ul className="space-y-2 text-zinc-400">
               <li>Email: info@yuralink.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: 123 Digital Way, Innovation City</li>
             </ul>
           </div>
         </div>
