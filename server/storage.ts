@@ -1,38 +1,74 @@
-import { users, type User, type InsertUser } from "@shared/schema";
+import {
+  type Influencer,
+  type InsertInfluencer,
+  type Company,
+  type InsertCompany
+} from "@shared/schema";
 
-// modify the interface with any CRUD methods
-// you might need
-
+// Storage interface for our application
 export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  // Influencer methods
+  createInfluencer(influencer: InsertInfluencer): Promise<Influencer>;
+  getInfluencer(id: number): Promise<Influencer | undefined>;
+  getAllInfluencers(): Promise<Influencer[]>;
+  
+  // Company methods
+  createCompany(company: InsertCompany): Promise<Company>;
+  getCompany(id: number): Promise<Company | undefined>;
+  getAllCompanies(): Promise<Company[]>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  currentId: number;
+  private influencers: Map<number, Influencer>;
+  private companies: Map<number, Company>;
+  private influencerId: number;
+  private companyId: number;
 
   constructor() {
-    this.users = new Map();
-    this.currentId = 1;
+    this.influencers = new Map();
+    this.companies = new Map();
+    this.influencerId = 1;
+    this.companyId = 1;
   }
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+  // Influencer methods
+  async createInfluencer(insertInfluencer: InsertInfluencer): Promise<Influencer> {
+    const id = this.influencerId++;
+    const influencer: Influencer = { 
+      ...insertInfluencer, 
+      id,
+      additionalInfo: insertInfluencer.additionalInfo || null 
+    };
+    this.influencers.set(id, influencer);
+    return influencer;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async getInfluencer(id: number): Promise<Influencer | undefined> {
+    return this.influencers.get(id);
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async getAllInfluencers(): Promise<Influencer[]> {
+    return Array.from(this.influencers.values());
+  }
+  
+  // Company methods
+  async createCompany(insertCompany: InsertCompany): Promise<Company> {
+    const id = this.companyId++;
+    const company: Company = { 
+      ...insertCompany, 
+      id,
+      additionalNotes: insertCompany.additionalNotes || null 
+    };
+    this.companies.set(id, company);
+    return company;
+  }
+
+  async getCompany(id: number): Promise<Company | undefined> {
+    return this.companies.get(id);
+  }
+
+  async getAllCompanies(): Promise<Company[]> {
+    return Array.from(this.companies.values());
   }
 }
 

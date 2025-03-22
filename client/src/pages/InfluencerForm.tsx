@@ -185,7 +185,7 @@ const InfluencerForm = () => {
             
             <Button 
               type="submit" 
-              className="btn-hover-effect w-full bg-gradient-to-r from-[#4f46e5] to-[#6366f1] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex justify-center items-center"
+              className="btn-hover-effect w-full bg-gradient-to-r from-[#10b981] to-[#1db954] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex justify-center items-center"
               disabled={isPending}
             >
               {isPending ? (
