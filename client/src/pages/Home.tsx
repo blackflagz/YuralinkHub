@@ -20,7 +20,7 @@ const Home = () => {
         <div className="mb-16 w-full flex justify-center overflow-hidden">
           <img 
             src="/connection.svg" 
-            alt="YURALINK connects influencers with companies" 
+            alt="" 
             className="w-full max-w-4xl object-contain transform hover:scale-105 transition-transform duration-500"
           />
         </div>
